@@ -9,7 +9,6 @@ import it.cambi.research.funding.enums.ComparisonOperatorEnum;
 
 /**
  * @author luca
- *
  */
 public class OpportunityPropertyDto {
 

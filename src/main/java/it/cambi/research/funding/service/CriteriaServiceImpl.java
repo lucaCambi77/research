@@ -25,6 +25,14 @@ import it.cambi.research.funding.opportunity.OpportunityProperty;
 @Service
 public class CriteriaServiceImpl {
 
+	/**
+	 * For every criteria we check if condition is a match and then combine all
+	 * boolean results
+	 * 
+	 * @param criteriaOperators
+	 * @param fundingOpportunity
+	 * @return
+	 */
 	public boolean matches(List<CriteriaOperator> criteriaOperators, FundingOpportunity fundingOpportunity) {
 
 		Map<LogicalOperatorEnum, List<Boolean>> result = new HashMap<LogicalOperatorEnum, List<Boolean>>();
@@ -67,7 +75,7 @@ public class CriteriaServiceImpl {
 					return true;
 
 				isMatched = isMatched && false;
-				
+
 				break;
 
 			case NOT:
@@ -88,6 +96,14 @@ public class CriteriaServiceImpl {
 		return isMatched;
 	}
 
+	/**
+	 * We actually using only String, but this could be improved based on property
+	 * data type if any different
+	 * 
+	 * @param opportunityDto
+	 * @param fundingOpportunity
+	 * @return
+	 */
 	public boolean matchesCriteria(OpportunityPropertyDto opportunityDto, FundingOpportunity fundingOpportunity) {
 
 		Criteria<String> criteria = new Criteria<String>();

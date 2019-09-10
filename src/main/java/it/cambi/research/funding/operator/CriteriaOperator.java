@@ -12,7 +12,7 @@ import it.cambi.research.funding.enums.LogicalOperatorEnum;
 
 /**
  * @author luca
- *
+ * A logical operator can have multiple property conditions like AND(property > value) OR (property = value)
  */
 public class CriteriaOperator {
 

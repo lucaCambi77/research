@@ -32,9 +32,11 @@ public class Criteria<T> {
 	}
 
 	/**
+	 * Predicates are created based on comparison operator and used to filter
+	 * funding opportunity map
+	 * 
 	 * @param fundingOpportunityMap
 	 * @param opportunityProperty
-	 * @param predicate
 	 * @return
 	 */
 	public boolean matches(Map<String, String> fundingOpportunityMap, OpportunityProperty<?> opportunityProperty) {
