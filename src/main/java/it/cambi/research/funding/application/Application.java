@@ -33,10 +33,11 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@PostMapping(path = "/search", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public String order(@RequestBody FundingOpportunityDto fundingOpportunityDto) throws JsonProcessingException {
+	@PostMapping(path = "/funding/match", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public String matchFundingOpportunity(@RequestBody FundingOpportunityDto fundingOpportunityDto)
+			throws JsonProcessingException {
 
-		log.info("... new search request");
+		log.info("... new match request");
 
 		String response = objectMapper.writeValueAsString(criteriaService
 				.matches(fundingOpportunityDto.getCriteriaOperator(), fundingOpportunityDto.getFundingOpportunity()));
