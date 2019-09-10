@@ -41,13 +41,14 @@ public class CriteriaTest {
 	private CriteriaServiceImpl criteriaService;
 
 	@SuppressWarnings("serial")
-	private FundingOpportunity fundingOpportunity = new FundingOpportunity(new HashMap<String, String>() {
-		{
-			put("name", "Healthcare technology research");
-			put("amount", "10000");
-			put("deadline", "20191020");
-		}
-	});
+	private FundingOpportunity fundingOpportunity = new FundingOpportunity.Builder()
+			.withFundingOpportunity(new HashMap<String, String>() {
+				{
+					put("name", "Healthcare technology research");
+					put("amount", "10000");
+					put("deadline", "20191020");
+				}
+			}).build();
 
 	@Test
 	@Order(1)
@@ -67,19 +68,22 @@ public class CriteriaTest {
 		@SuppressWarnings("serial")
 		List<CriteriaOperator> criteriaOperators = new ArrayList<CriteriaOperator>() {
 			{
-				add(new CriteriaOperator(LogicalOperatorEnum.AND, new ArrayList<OpportunityPropertyDto>() {
-					{
-						add(opportunityProperty);
-						add(opportunityProperty1);
+				add(new CriteriaOperator.Builder().withLogicalOperator(LogicalOperatorEnum.AND)
+						.withOpportunityProperty(new ArrayList<OpportunityPropertyDto>() {
+							{
+								add(opportunityProperty);
+								add(opportunityProperty1);
 
-					}
-				}));
-				add(new CriteriaOperator(LogicalOperatorEnum.OR, new ArrayList<OpportunityPropertyDto>() {
-					{
-						add(opportunityProperty2);
+							}
+						}).build());
 
-					}
-				}));
+				add(new CriteriaOperator.Builder().withLogicalOperator(LogicalOperatorEnum.OR)
+						.withOpportunityProperty(new ArrayList<OpportunityPropertyDto>() {
+							{
+								add(opportunityProperty2);
+
+							}
+						}).build());
 			}
 		};
 
@@ -105,19 +109,22 @@ public class CriteriaTest {
 		@SuppressWarnings("serial")
 		List<CriteriaOperator> criteriaOperators = new ArrayList<CriteriaOperator>() {
 			{
-				add(new CriteriaOperator(LogicalOperatorEnum.OR, new ArrayList<OpportunityPropertyDto>() {
-					{
-						add(opportunityProperty);
-						add(opportunityProperty1);
+				add(new CriteriaOperator.Builder().withLogicalOperator(LogicalOperatorEnum.OR)
+						.withOpportunityProperty(new ArrayList<OpportunityPropertyDto>() {
+							{
+								add(opportunityProperty);
+								add(opportunityProperty1);
 
-					}
-				}));
-				add(new CriteriaOperator(LogicalOperatorEnum.AND, new ArrayList<OpportunityPropertyDto>() {
-					{
-						add(opportunityProperty2);
+							}
+						}).build());
 
-					}
-				}));
+				add(new CriteriaOperator.Builder().withLogicalOperator(LogicalOperatorEnum.AND)
+						.withOpportunityProperty(new ArrayList<OpportunityPropertyDto>() {
+							{
+								add(opportunityProperty2);
+
+							}
+						}).build());
 			}
 		};
 

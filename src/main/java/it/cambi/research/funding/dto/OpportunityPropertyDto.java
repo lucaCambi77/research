@@ -3,6 +3,8 @@
  */
 package it.cambi.research.funding.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+
 import it.cambi.research.funding.enums.ComparisonOperatorEnum;
 
 /**
@@ -15,6 +17,7 @@ public class OpportunityPropertyDto {
 	private String value;
 	private ComparisonOperatorEnum comparisonOperator;
 
+	@JsonIgnoreType
 	public static class Builder {
 		private String propertyName;
 		private String value;

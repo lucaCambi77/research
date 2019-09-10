@@ -5,6 +5,8 @@ package it.cambi.research.funding.operator;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+
 import it.cambi.research.funding.dto.OpportunityPropertyDto;
 import it.cambi.research.funding.enums.LogicalOperatorEnum;
 
@@ -16,15 +18,6 @@ public class CriteriaOperator {
 
 	private LogicalOperatorEnum logicalOperator;
 	private List<OpportunityPropertyDto> opportunityProperty;
-
-	/**
-	 * @param logicalOperator
-	 */
-	public CriteriaOperator(LogicalOperatorEnum logicalOperator, List<OpportunityPropertyDto> opportunityProperty) {
-		super();
-		this.logicalOperator = logicalOperator;
-		this.opportunityProperty = opportunityProperty;
-	}
 
 	public LogicalOperatorEnum getLogicalOperator() {
 		return logicalOperator;
@@ -42,4 +35,28 @@ public class CriteriaOperator {
 		this.opportunityProperty = opportunityProperty;
 	}
 
+	@JsonIgnoreType
+	public static class Builder {
+		private LogicalOperatorEnum logicalOperator;
+		private List<OpportunityPropertyDto> opportunityProperty;
+
+		public Builder withLogicalOperator(LogicalOperatorEnum logicalOperator) {
+			this.logicalOperator = logicalOperator;
+			return this;
+		}
+
+		public Builder withOpportunityProperty(List<OpportunityPropertyDto> opportunityProperty) {
+			this.opportunityProperty = opportunityProperty;
+			return this;
+		}
+
+		public CriteriaOperator build() {
+
+			CriteriaOperator criteriaOperator = new CriteriaOperator();
+			criteriaOperator.logicalOperator = this.logicalOperator;
+			criteriaOperator.opportunityProperty = opportunityProperty;
+
+			return criteriaOperator;
+		}
+	}
 }

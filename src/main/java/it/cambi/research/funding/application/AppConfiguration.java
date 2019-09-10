@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +25,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  */
 @Configuration
 @ComponentScan(basePackages = { "it.cambi.research.funding.service" })
+@EntityScan(basePackages = { "it.cambi.research.funding.model" })
 public class AppConfiguration {
 
 	@Bean

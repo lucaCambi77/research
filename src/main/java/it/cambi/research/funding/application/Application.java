@@ -8,10 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import it.cambi.research.funding.dto.FundingOpportunityDto;
+import it.cambi.research.funding.service.CriteriaServiceImpl;
 
 @SpringBootApplication
 @RestController
@@ -22,16 +26,22 @@ public class Application {
 	@Autowired
 	private ObjectMapper objectMapper;
 
+	@Autowired
+	private CriteriaServiceImpl criteriaService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
 
 	@PostMapping(path = "/search", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public String order() throws JsonProcessingException {
+	public String order(@RequestBody FundingOpportunityDto fundingOpportunityDto) throws JsonProcessingException {
 
-		log.info("... new order request");
+		log.info("... new search request");
 
-		return objectMapper.writeValueAsString("");
+		String response = objectMapper.writeValueAsString(criteriaService
+				.matches(fundingOpportunityDto.getCriteriaOperator(), fundingOpportunityDto.getFundinOpportunity()));
+
+		return response;
 
 	}
 

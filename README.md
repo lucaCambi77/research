@@ -1,9 +1,9 @@
 
 ## Task ##
 
-Given a customer order you are required to determine the cost and pack breakdown for each product.
-To save on shipping space each order should contain the minimal number of packs.
-See pdf in /pdf/Hexad-Backend_Assignment_Bakery.pdf
+Design and implement some Java code which can be used to determine if a Funding Opportunity matches a set of criteria.
+
+See pdf in /pdf/Research Coding Exercise Offline.pdf
 
 ## Install and run the application
 To use the application you need java 8 installed in your machine. This is a spring boot application with embedded tomcat
