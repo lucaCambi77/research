@@ -110,9 +110,9 @@ public class FundingTest {
 		};
 
 		fundingOpportunityDto.setCriteriaOperator(criteriaOperators);
-		fundingOpportunityDto.setFundinOpportunity(fundingOpportunity);
+		fundingOpportunityDto.setFundingOpportunity(fundingOpportunity);
 
-		System.out.println(objectMapper.writeValueAsString(fundingOpportunityDto));
+		System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(fundingOpportunityDto));
 		HttpEntity<FundingOpportunityDto> request = new HttpEntity<FundingOpportunityDto>(fundingOpportunityDto);
 
 		ResponseEntity<Boolean> entity = restTemplate.postForEntity("http://localhost:" + this.port + "/search",
