@@ -115,7 +115,7 @@ public class FundingTest {
 		System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(fundingOpportunityDto));
 		HttpEntity<FundingOpportunityDto> request = new HttpEntity<FundingOpportunityDto>(fundingOpportunityDto);
 
-		ResponseEntity<Boolean> entity = restTemplate.postForEntity("http://localhost:" + this.port + "/search",
+		ResponseEntity<Boolean> entity = restTemplate.postForEntity("http://localhost:" + this.port + "/funding/match",
 				request, Boolean.class);
 
 		assertEquals(HttpStatus.OK, entity.getStatusCode());
