@@ -1,4 +1,4 @@
-package it.cambi.hexad.bakery.application;
+package it.cambi.research.funding.application;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

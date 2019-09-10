@@ -1,7 +1,7 @@
 /**
  * 
  */
-package it.cambi.hexad.bakery.test;
+package it.cambi.research.funding.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,8 +19,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import it.cambi.hexad.bakery.application.AppConfiguration;
-import it.cambi.hexad.bakery.application.Application;
+import it.cambi.research.funding.application.AppConfiguration;
+import it.cambi.research.funding.application.Application;
 
 /**
  * @author luca

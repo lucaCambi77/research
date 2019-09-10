@@ -1,7 +1,7 @@
 /**
  * 
  */
-package it.cambi.hexad.bakery.application;
+package it.cambi.research.funding.application;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  *
  */
 @Configuration
-@ComponentScan(basePackages = { "it.cambi.hexad.bakery.services" })
+@ComponentScan(basePackages = { "it.cambi.research.funding.service" })
 public class AppConfiguration {
 
 	@Bean
