@@ -42,7 +42,7 @@ import it.cambi.research.funding.opportunity.FundingOpportunity;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = { Application.class, AppConfiguration.class }, webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(OrderAnnotation.class)
-public class FundingTest {
+public class FundingRestTest {
 
 	@SuppressWarnings("serial")
 	private FundingOpportunity fundingOpportunity = new FundingOpportunity.Builder()
@@ -72,7 +72,7 @@ public class FundingTest {
 
 	@Test
 	@Order(2)
-	public void testRestBakeryNullOrder() throws Exception {
+	public void testRestFundingMatchRequest() throws Exception {
 
 		FundingOpportunityDto fundingOpportunityDto = new FundingOpportunityDto();
 
