@@ -39,7 +39,7 @@ public class Application {
 		log.info("... new search request");
 
 		String response = objectMapper.writeValueAsString(criteriaService
-				.matches(fundingOpportunityDto.getCriteriaOperator(), fundingOpportunityDto.getFundinOpportunity()));
+				.matches(fundingOpportunityDto.getCriteriaOperator(), fundingOpportunityDto.getFundingOpportunity()));
 
 		return response;
 

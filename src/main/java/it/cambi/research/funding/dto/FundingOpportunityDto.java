@@ -14,15 +14,15 @@ import it.cambi.research.funding.opportunity.FundingOpportunity;
  */
 public class FundingOpportunityDto {
 
-	private FundingOpportunity fundinOpportunity;
+	private FundingOpportunity fundingOpportunity;
 	private List<CriteriaOperator> criteriaOperator;
 
-	public FundingOpportunity getFundinOpportunity() {
-		return fundinOpportunity;
+	public FundingOpportunity getFundingOpportunity() {
+		return fundingOpportunity;
 	}
 
-	public void setFundinOpportunity(FundingOpportunity fundinOpportunity) {
-		this.fundinOpportunity = fundinOpportunity;
+	public void setFundingOpportunity(FundingOpportunity fundinOpportunity) {
+		this.fundingOpportunity = fundinOpportunity;
 	}
 
 	public List<CriteriaOperator> getCriteriaOperator() {
