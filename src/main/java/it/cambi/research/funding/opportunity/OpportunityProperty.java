@@ -10,8 +10,8 @@ import it.cambi.research.funding.enums.ComparisonOperatorEnum;
   *	A property of a funding opportunity is composed by :
  *
  *  1) property name
- *  2) value is actually always a String, but Generics could be used for different data types
- *  3) comparison operator see {@link ComparisonOperatorEnum}
+ *  2) value : is actually always a String, but Generics could be used for different data types. Characters like dash or slashes should be avoided on dates
+ *  3) comparison operator : see {@link ComparisonOperatorEnum}
  */
 public class OpportunityProperty<T> {
 

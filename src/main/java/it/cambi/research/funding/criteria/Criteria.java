@@ -32,8 +32,8 @@ public class Criteria<T> {
 	}
 
 	/**
-	 * Predicates are created based on comparison operator and used to filter
-	 * funding opportunity map
+	 * Predicates are created based on comparison operator and used to apply filter
+	 * funding opportunity map. We can add operator here to create more conditions
 	 * 
 	 * @param fundingOpportunityMap
 	 * @param opportunityProperty
